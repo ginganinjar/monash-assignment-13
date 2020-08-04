@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	 <!-- Boostrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+		<title>MVC With Cats!</title>
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="/assets/js/cats.js"></script>
+
+
+	</head>
+	<body>
+
+  <section id="MainContent">
+    <div class="jumbotron">
+
+      <!-- - Added class  -->
+
+      <div class="container background-container-color">
+
+        <div class="row">
+          <div class="col-sm-12">
+            <h1> Burger Content here </h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4">
+    colom 1 {{ text }} 
+				
+          </div>
+          <div class="col-sm-4">
+          {{ text2 }}
+          </div>
+ <div class="col-sm-4">
+           colum 3
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+		{{{ body }}}
+	</body>
+</html>
