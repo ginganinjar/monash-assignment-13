@@ -8,11 +8,11 @@ var cat = require("../models/burgers.js");
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
   cat.all(function(data) {
-    var hbsObject = {
-      cats: data
+    var burgerObj = {
+      burger: data
     };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
+    console.log(burgerObj);
+    res.render("index", burgerObj);
   });
 });
 
