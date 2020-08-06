@@ -4,6 +4,10 @@ li {
   background: #faebd7;
 }
 
+.burgerToEat {
+  cursor:pointer
+}
+
 .label {
   font-weight: bold;
 }
