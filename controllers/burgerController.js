@@ -6,60 +6,66 @@ var router = express.Router();
 var burger = require("../models/burgers.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-  burger.all(function(data) {
-    
+router.get("/", function (req, res) {
+  burger.all(function (data) {
     var burgerObj = {
-      burger: data
+      burger: data,
     };
-    console.log(burgerObj);
+    // console.log(burgerObj);
     res.render("index", burgerObj);
   });
 });
 
+router.post("/api/burger", function (req, res) {
+  burger.create(
+    ["name", "status", "action_date"],
+    [req.body.name, req.body.status, req.body.action_date],
+    function (result) {
+      // Send back the ID of the new quote
+      res.json({ id: result.insertId });
+    }
+  );
+});
 
-// name: $("#ca").val().trim(),
-// status : "served",
-// action_date: Date.now()
+router.delete("/api/delete/:id", function (req, res) {
+  // function(table, objColVals, condition, cb) {
 
-router.post("/api/burger", function(req, res) {
-  burger.create([
-    "name", "status", "action_date"
-  ], [
-    req.body.name, req.body.status, req.body.action_date
-  ], function(result) {
+  let theID = req.params.id;
+  let value1 = 'status = ""';
+  let value2 = "(idburgers = " + req.params.id + ")";
+  let likeSearch = "LIKE " + req.params.id;
+
+  burger.getStatus("idburgers", likeSearch, function (result) {
     // Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  });
-});
+    console.log(result);
+    let theResult = result[0].status;
+    // console.log("the status is" + theResult);
+    // if the status is serverd = change it to null
 
-router.put("/api/cats/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
-
-  console.log("condition", condition);
-
-  burger.update({
-    sleepy: req.body.sleepy
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
+    if (theResult == "served") {
+      burger.updateStatus(value1, value2, function (result) {
+        // Send back the ID of the new quote
+        console.log(result);
+      });
     } else {
-      res.status(200).end();
+      // delete this one all together.
+      burger.delete(value2, function (result) {
+        // Send back the ID of the new quote
+        console.log(result);
+      });
     }
-  });
-});
 
-router.delete("/api/cats/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+    // ok now lets refresh to entire form - get an update of all objects
+    // and display accordingly.
 
-  burger.delete(condition, function(result) {
-    if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
+    burger.all(function (data) {
+      var burgerObj = {
+        burger: data,
+      };
+      res.render("index", burgerObj);
+    });
+
+    // refresh index here
   });
 });
 

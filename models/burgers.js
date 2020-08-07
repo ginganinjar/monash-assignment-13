@@ -13,11 +13,23 @@ var burger = {
       cb(res);
     });
   },
+  getStatus: function(field, likeSearch, cb) {
+    orm.getStatus("burgers", field, likeSearch, function(res) {
+      cb(res);
+    });
+  },
+
   update: function(objColVals, condition, cb) {
     orm.update("burgers", objColVals, condition, function(res) {
       cb(res);
     });
   },
+  updateStatus: function(set, condition, cb) {
+    orm.updateStatus("burgers", set, condition, function(res) {
+      cb(res);
+    });
+  },
+
   delete: function(condition, cb) {
     orm.delete("burgers", condition, function(res) {
       cb(res);

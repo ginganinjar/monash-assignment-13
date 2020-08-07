@@ -4,9 +4,19 @@ $(function() {
 $(".burgerToEat").on("click", function() {
     let daBurgerToEat = $(this).data("id"); //  this is the id to delete
     console.log(daBurgerToEat);
- 
+    $.ajax("/api/delete/" + daBurgerToEat, {
+      type: "delete",
+      data: daBurgerToEat
+    }).then(
+      function() {
+        console.log("Deleted", daBurgerToEat);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
 
-})
+
 
   $(".change-sleep").on("click", function(event) {
     var id = $(this).data("id");

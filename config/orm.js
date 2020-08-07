@@ -70,24 +70,34 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
-  update: function(table, objColVals, condition, cb) {
-    var queryString = "UPDATE " + table;
 
-    queryString += " SET ";
-    queryString += objToSql(objColVals);
-    queryString += " WHERE ";
-    queryString += condition;
 
-    console.log(queryString);
+  updateStatus: function(table, set, condition, cb) {
+    
+    queryString = "UPDATE " + table + " SET " + set + " WHERE " + condition + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
       }
-
+     
       cb(result);
     });
   },
+  getStatus: function(table, set, condition, cb) {
+    
+    //queryString = "UPDATE " + table + " SET " + set + " WHERE " + condition + ";";
+   let newSearch = "SELECT * FROM " + table + " WHERE " + set + " " + condition + ";";
+   console.log(newSearch);
+
+    connection.query(newSearch, function(err, result) {
+      if (err) {
+        throw err;
+      }
+     
+      cb(result);
+    });
+  },
+
   delete: function(table, condition, cb) {
     var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
