@@ -85,7 +85,6 @@ var orm = {
   },
   getStatus: function(table, set, condition, cb) {
     
-    //queryString = "UPDATE " + table + " SET " + set + " WHERE " + condition + ";";
    let newSearch = "SELECT * FROM " + table + " WHERE " + set + " " + condition + ";";
    console.log(newSearch);
 

@@ -11,7 +11,7 @@ router.get("/", function (req, res) {
     var burgerObj = {
       burger: data,
     };
-    // console.log(burgerObj);
+
     res.render("index", burgerObj);
   });
 });
@@ -27,7 +27,7 @@ router.post("/api/burger", function (req, res) {
   );
 });
 
-router.delete("/api/delete/:id", function (req, res) {
+router.delete("/api/change/:id", function (req, res) {
   // function(table, objColVals, condition, cb) {
 
   let theID = req.params.id;
@@ -36,22 +36,20 @@ router.delete("/api/delete/:id", function (req, res) {
   let likeSearch = "LIKE " + req.params.id;
 
   burger.getStatus("idburgers", likeSearch, function (result) {
-    // Send back the ID of the new quote
-    console.log(result);
+    // identify the status of the object
     let theResult = result[0].status;
-    // console.log("the status is" + theResult);
+
     // if the status is serverd = change it to null
 
     if (theResult == "served") {
       burger.updateStatus(value1, value2, function (result) {
-        // Send back the ID of the new quote
-        console.log(result);
+        
+     
       });
     } else {
       // delete this one all together.
       burger.delete(value2, function (result) {
-        // Send back the ID of the new quote
-        console.log(result);
+
       });
     }
 
