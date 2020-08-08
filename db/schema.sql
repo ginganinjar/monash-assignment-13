@@ -1,12 +1,11 @@
 ### Schema
 
-CREATE DATABASE cat_db;
-USE cat_db;
+CREATE DATABASE burgers;
+USE burgers;
 
-CREATE TABLE cats
-(
-	id int NOT NULL AUTO_INCREMENT,
-	name varchar(255) NOT NULL,
-	sleepy BOOLEAN DEFAULT false,
-	PRIMARY KEY (id)
-);
+CREATE TABLE `burgers`.`burgers` (
+  `idburgers` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(120) NULL,
+  `status` VARCHAR(45) NULL,
+  `action_date` VARCHAR(45) NULL,
+  PRIMARY KEY (`idburgers`));
