@@ -10,12 +10,18 @@ h2 {
   font-size: 15px;
 }
 
+
+
 li {
   padding: 5px;
   margin: 5px;
   background: #faebd7;
   list-style-type: none;
 }
+.info {
+  text-align: center;
+  
+  }
 
 .burgerToEat {
   cursor: pointer;
