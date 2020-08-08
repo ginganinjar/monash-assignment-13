@@ -3,7 +3,7 @@
 CREATE DATABASE burgers;
 USE burgers;
 
-CREATE TABLE `burgers`.`burgers` (
+CREATE TABLE `burgers` (
   `idburgers` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(120) NULL,
   `status` VARCHAR(45) NULL,
