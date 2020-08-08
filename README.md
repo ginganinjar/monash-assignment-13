@@ -106,7 +106,7 @@ echo "Error: no test specified" && exit 1
 David. S
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-The guys at trilogy
+The guys at trilogy and Tri
 
 ### :copyright: License <a name = "license"></a>
 
