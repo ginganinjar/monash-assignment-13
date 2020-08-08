@@ -10,24 +10,23 @@
 
   [![GitHub issues](https://img.shields.io/github/followers/ginganinjar?label=Follow)](/issues)
   [![Status](https://img.shields.io/badge/status-active-success.svg)]()  
-  [![GitHub issues](https://img.shields.io/github/issues/ginganinjar/mvc_design)](/issues)
-  [![GitHub Pull Requests](	https://img.shields.io/github/issues-pr/ginganinjar/mvc_design)]()
-  [![GitHub Forks](	https://img.shields.io/github/forks/ginganinjar/mvc_design?label=Fork)]()
+  [![GitHub issues](https://img.shields.io/github/issues/ginganinjar/monash-assignment-13)](/issues)
+  [![GitHub Pull Requests](	https://img.shields.io/github/issues-pr/ginganinjar/monash-assignment-13)]()
+  [![GitHub Forks](	https://img.shields.io/github/forks/ginganinjar/monash-assignment-13?label=Fork)]()
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/mit-license.php)
 
 </div>
 
 ---
+A live version of the application can be viewed here : https://desolate-inlet-67133.herokuapp.com/
 
 <p align="center"> The taks was assigned to create a backend node.js application to be deployed to Heroku accessing MYSQL using JAWSDB Mysql.
 
 Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
 
-
 Whenever a user submits a burger's name, your app will display the burger on the left side of the page -- waiting to be devoured.
 
-
-Each burger in the waiting area also has a Devour it! button. When the user clicks it, the burger will move to the right side of the page.
+Each burger in the waiting area also has a Eat it button button. When the user clicks it, the burger will move to the right side of the page. On the right side of the screen the user can "flush" the burger. Sending it away, far away.
 
 
 This app stores  every burger in a database, whether devoured or not.
@@ -45,7 +44,7 @@ This small demo has been developed to  use Heroku for hosting. Please note that 
 </p>
 
 ## :package: Repositry
-undefined
+[Repositry](https://github.com/ginganinjar/monash-assignment-13)
 
 ## 📝 Table of Contents
 - [About](#about)
