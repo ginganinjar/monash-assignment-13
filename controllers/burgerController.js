@@ -7,7 +7,7 @@ var burger = require("../models/burgers.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
-  burger.all(function (data) {
+  burger.selectAll(function (data) {
     var burgerObj = {
       burger: data,
     };
@@ -17,7 +17,7 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burger", function (req, res) {
-  burger.create(
+  burger.insertOne(
     ["name", "status", "action_date"],
     [req.body.name, req.body.status, req.body.action_date],
     function (result) {
@@ -42,7 +42,7 @@ router.delete("/api/change/:id", function (req, res) {
     // if the status is serverd = change it to null
 
     if (theResult == "served") {
-      burger.updateStatus(value1, value2, function (result) {
+      burger.updateOne(value1, value2, function (result) {
         
      
       });
@@ -56,7 +56,7 @@ router.delete("/api/change/:id", function (req, res) {
     // ok now lets refresh to entire form - get an update of all objects
     // and display accordingly.
 
-    burger.all(function (data) {
+    burger.selectAll(function (data) {
       var burgerObj = {
         burger: data,
       };

@@ -3,7 +3,7 @@ $(function() {
 
 $(".burgerToEat").on("click", function() {
     let daBurgerToEat = $(this).data("id"); //  this is the id to delete
-    console.log(daBurgerToEat);
+   
     $.ajax("/api/change/" + daBurgerToEat, {
       type: "delete",
       data: daBurgerToEat
