@@ -1,18 +1,33 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
+
+
 $(function() {
 
 $(".burgerToEat").on("click", function() {
+
+ 
+
+  
     let daBurgerToEat = $(this).data("id"); //  this is the id to delete
    
     $.ajax("/api/change/" + daBurgerToEat, {
-      type: "delete",
+      type: "put",
       data: daBurgerToEat
     }).then(
       function() {
-        console.log("Deleted", daBurgerToEat);
+        console.log("Updated", daBurgerToEat);
        
         // Reload the page to get the updated list
-        location.reload();
+        
+        // load sound effect
+         var audio = new Audio('./assets/sound/eating.wav');
+         audio.play();
+
+         // wait for sound effect to complete before executing reload. 
+          audio.onended= function () {
+              console.log("Audio Complete");
+              location.reload();
+        }
       }
     );
   });
@@ -43,3 +58,5 @@ $(".burgerToEat").on("click", function() {
   });
 
 });
+
+

@@ -11,7 +11,7 @@ Click <b>"time to eat"</b> for any burgers waiting on the left. Once you've eate
       {{#if status}}
       <li class="burgerToEat" data-id="{{idburgers}}"">  <img src="./assets/img/burger.png"  alt="burger icon" width="50" height="50">  
         {{name}} 
-        <img src="./assets/img/eatit.png"  alt="burger icon" width="50" height="50" style="float:right" title="Eat it yum yum"> 
+        <img class="button-3d" src="./assets/img/eatit.png"  alt="burger icon" width="50" height="50" style="float:right" title="Eat it yum yum"> 
         </li>
        {{/if}}
       {{/each}}
@@ -41,9 +41,9 @@ Click <b>"time to eat"</b> for any burgers waiting on the left. Once you've eate
       {{#each burger}}
       {{#if status}}
       {{else}}
-      <li class="burgerToEat" data-id="{{idburgers}}"">  <img src="./assets/img/toilet.jpg"  alt="burger icon" width="50" height="50">  
+      <li class="burgerToEat" data-id="{{idburgers}}"">  <img src="./assets/img/stomache.png"  alt="burger icon" width="50" height="50">  
         {{name}} 
-        <img src="./assets/img/flush.png"  alt="burger icon" width="50" height="50" style="float:right" title="Flush IT!"> 
+        <img class="button-3d" src="./assets/img/flush.png" alt="burger icon" width="50" height="50" style="float:right" title="Flush IT!"> 
         </li>
        {{/if}}
       {{/each}} 
