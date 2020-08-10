@@ -29,7 +29,7 @@ Whenever a user submits a burger's name, your app will display the burger on the
 Each burger in the waiting area also has a Eat it button button. When the user clicks it, the burger will move to the right side of the page. On the right side of the screen the user can "flush" the burger. Sending it away, far away.
 
 
-This app stores  every burger in a database, whether devoured or not.
+This app stores every burger in a database, whether devoured or not.
 
 In the orm.js file, three methods  will execute the necessary MySQL commands in the controllers. These are the methods needed to use in order to retrieve and store data in your database.
 
@@ -38,8 +38,6 @@ insertOne()
 updateOne()
 
 This small demo has been developed to  use Heroku for hosting. Please note that while Heroku is free, it does request credit card information.
-
-
  
 </p>
 
@@ -115,6 +113,6 @@ The guys at trilogy and Tri
 ## :question: Questions <a name = "<questions"></a>
 Questions, concers, comments ? 
 
-Please feel free to contact me at : https://ginganinjar.github.io/contact.html
+Please feel free to contact me at : https://ginganinjar.github.io/contact.html or you can view my portfolio here : https://ginganinjar.github.io/
 
 Looking forward to hearing from you.

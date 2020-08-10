@@ -57,6 +57,12 @@ text-align: center;
 .form-group {
   margin-bottom: 5px;
 }
+
+.burgerToDelete {
+  cursor: pointer;
+}
+
+
 .button-3d {
   position:relative;
   width: auto;

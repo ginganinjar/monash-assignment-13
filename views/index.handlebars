@@ -1,5 +1,5 @@
 <div class="info">
-Click <b>"time to eat"</b> for any burgers waiting on the left. Once you've eaten your burger, there's really only once place left for it to go. Click the toilet to make it vanish! Don't see a burger you want to eat, order your very own one-of-a-kind burger below and click <b>"Order IT"</b> to have one of our chefs prepare it for you.
+Click <b>"time to eat"</b> for any burgers waiting on the left. Once you've eaten your burger, there's really only once place left for it to go. You can decide to bring it back to life buy pushing the tummy, but that's usually considered a medical condition. Or, you can click the toilet to make it vanish! Don't see a burger you want to eat, order your very own one-of-a-kind burger below and click <b>"Order IT"</b> to have one of our chefs prepare it for you.
 </div>
 
 <div class="row showBorder"> 
@@ -9,7 +9,7 @@ Click <b>"time to eat"</b> for any burgers waiting on the left. Once you've eate
     <ul>
       {{#each burger}}
       {{#if status}}
-      <li class="burgerToEat" data-id="{{idburgers}}"">  <img src="./assets/img/burger.png"  alt="burger icon" width="50" height="50">  
+      <li class="burgerToEat" data-id="{{idburgers}}" data-status="act">  <img src="./assets/img/burger.png"  alt="burger icon" width="50" height="50">  
         {{name}} 
         <img class="button-3d" src="./assets/img/eatit.png"  alt="burger icon" width="50" height="50" style="float:right" title="Eat it yum yum"> 
         </li>
@@ -41,9 +41,9 @@ Click <b>"time to eat"</b> for any burgers waiting on the left. Once you've eate
       {{#each burger}}
       {{#if status}}
       {{else}}
-      <li class="burgerToEat" data-id="{{idburgers}}"">  <img src="./assets/img/stomache.png"  alt="burger icon" width="50" height="50">  
+      <li>  <img src="./assets/img/stomache.png" class="burgerToEat button-3d" data-id="{{idburgers}}" data-status="del" alt="burger icon" width="50" height="50">  
         {{name}} 
-        <img class="button-3d" src="./assets/img/flush.png" alt="burger icon" width="50" height="50" style="float:right" title="Flush IT!"> 
+        <img class="button-3d burgerToDelete" src="./assets/img/flush.png" data-id="{{idburgers}}" alt="burger icon" width="50" height="50" style="float:right" title="Flush IT!"> 
         </li>
        {{/if}}
       {{/each}} 
