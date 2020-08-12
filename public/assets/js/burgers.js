@@ -51,7 +51,7 @@ $(".burgerToEat").on("click", function() {
        
         // Reload the page to get the updated list
         
-        // load sound effect
+        // load sound effect to make sure everything is ok..
          var audio = new Audio('./assets/sound/toilet.wav');
          audio.play();
 
